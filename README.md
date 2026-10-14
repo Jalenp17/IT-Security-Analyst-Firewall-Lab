@@ -51,7 +51,8 @@ ping 192.168.233.130
 
 The baseline test established whether the target responded to ICMP echo requests before the firewall change.
 
-![Baseline ping test](screenshots/01-baseline-ping.png)
+<img width="595" height="389" alt="01-baseline-ping" src="https://github.com/user-attachments/assets/c532512d-350f-4002-b3bc-e0d1487790cf" />
+
 
 ## Step 2: Perform an Nmap Scan
 
@@ -65,7 +66,8 @@ nmap 192.168.233.130
 
 The scan identified open TCP ports and ports that did not respond to the scan. Nmap results describe what was observable from the testing VM at the time of the scan.
 
-![Nmap baseline scan](screenshots/02-nmap-baseline.png)
+<img width="587" height="373" alt="02-nmap-baseline" src="https://github.com/user-attachments/assets/a2cfb402-6ef8-4200-9043-86f808765816" />
+
 
 ## Step 3: Identify Services with Nmap
 
@@ -81,7 +83,8 @@ The scan reported services associated with DNS, Kerberos, Microsoft RPC, NetBIOS
 
 Open ports should not automatically be considered vulnerabilities. Their exposure must be evaluated against the server's intended role, required access, and security configuration.
 
-![Nmap service detection results](screenshots/03-nmap-service-detection.png)
+<img width="634" height="493" alt="03-nmap-service-detection" src="https://github.com/user-attachments/assets/25375dc5-8ff6-4953-aaf1-5326c533ed43" />
+
 
 ## Step 4: Configure a Windows Firewall Rule
 
@@ -100,7 +103,8 @@ Rule configuration:
 
 The rule was created specifically for this lab to demonstrate how a firewall can block inbound ping requests. It was not intended as a permanent production configuration.
 
-![Windows Firewall block rule](screenshots/04-firewall-block-rule.png)
+<img width="443" height="333" alt="04-firewall-block-rule" src="https://github.com/user-attachments/assets/dadc6222-f4a7-4178-9195-497ce67ac1ca" />
+
 
 ## Step 5: Test the Firewall Rule
 
@@ -114,7 +118,8 @@ ping 192.168.233.130
 
 The test showed 100% packet loss while the rule was active. This result was consistent with the firewall blocking ping traffic.
 
-![Ping test while firewall rule was enabled](screenshots/05-ping-blocked.png)
+<img width="573" height="130" alt="05-ping-blocked" src="https://github.com/user-attachments/assets/cbac3328-3608-4de4-b8a0-57a9450eed34" />
+
 
 ## Step 6: Remove the Rule and Verify Connectivity
 
@@ -124,7 +129,8 @@ I repeated the ping test from Kali Linux and confirmed that connectivity was res
 
 This completed the test cycle: establish a baseline, apply a security control, test its effect, remove the temporary change, and verify the result.
 
-![Ping test after removing the firewall rule](screenshots/06-ping-restored.png)
+<img width="547" height="223" alt="06-ping-restored" src="https://github.com/user-attachments/assets/16094ec2-cc50-4d02-857c-236202bae604" />
+
 
 ## Results
 
